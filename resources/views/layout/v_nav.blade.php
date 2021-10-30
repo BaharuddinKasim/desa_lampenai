@@ -1,0 +1,19 @@
+<ul class="sidebar-menu" data-widget="tree">
+    <li class="header">MAIN NAVIGATION</li>
+    <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="/"><i class="fa fa-home"></i> <span>Home</span></a></li>
+    <li class="{{ request()->is('surat') ? 'active' : '' }}"><a href="/surat"><i class="fa fa-envelope"></i> <span>Kelola Surat</span></a></li>
+    <li class="{{ request()->is('antar') ? 'active' : '' }}"><a href="/antar"><i class="fa fa-send"></i> <span>Pengantaran Surat</span></a></li>
+    <li class="{{ request()->is('user') ? 'active' : '' }}"><a href="/user"><i class="fa fa-users"></i> <span>Kelola User</span></a></li>
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-archive"></i> <span>Arsip Surat</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li class="{{ request()->is('smasuk') ? 'active' : '' }}"><a href="/smasuk"><i class="fa  fa-sign-in"></i> Surat Masuk</a></li>
+            <li class="{{ request()->is('skeluar') ? 'active' : '' }}"><a href="/skeluar"><i class="fa fa-sign-out"></i> Surat Keluar</a></li>
+        </ul>
+    </li>
+</ul>
