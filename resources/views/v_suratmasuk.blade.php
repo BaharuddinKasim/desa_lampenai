@@ -38,13 +38,19 @@
                     <td>{{ $data->perihal }}</td>
                     <td>{{ $data->kode_surat }}</td>
                     <td>{{ $data->file_surat }}</td>
-                    <td>
-                        <a href="/smasuk/detail/{{ $data->id_suratmasuk }}" class="btn btn-sm btn-success">Detail</a>
-                        <a href="/smasuk/edit/{{ $data->id_suratmasuk }}" class="btn btn-sm btn-warning">Edit</a>
-                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete{{ $data->id_suratmasuk }}">
-                            Delete
-                        </button>
-                    </td>
+                    @if(auth()->user()->level_id == 3)
+                        <td>
+                            <a href="/smasuk/detail/{{ $data->id_suratmasuk }}" class="btn btn-sm btn-success">Detail</a>
+                            <a href="/smasuk/edit/{{ $data->id_suratmasuk }}" class="btn btn-sm btn-warning">Edit</a>
+                            <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete{{ $data->id_suratmasuk }}">
+                                Delete
+                            </button>
+                        </td>
+                    @elseif(auth()->user()->level_id == 4 or auth()->user()->level_id == 2)
+                        <td>
+                            <a href="/smasuk/detail/{{ $data->id_suratmasuk }}" class="btn btn-sm btn-success">Detail</a>
+                        </td>
+                    @endif
                 </tr>
             @endforeach
         </tbody>

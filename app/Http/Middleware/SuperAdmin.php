@@ -16,7 +16,7 @@ class SuperAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->level_id <= 1) {
+        if(auth()->user()->level_id <= 3) {
             return $next($request);
         }
         return redirect('/');

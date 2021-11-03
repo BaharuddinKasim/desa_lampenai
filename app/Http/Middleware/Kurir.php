@@ -16,7 +16,7 @@ class Kurir
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->level_id <= 4) {
+        if(auth()->user()->level_id <= 1) {
             return $next($request);
         }
         return redirect('/');

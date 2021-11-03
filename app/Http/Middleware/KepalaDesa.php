@@ -16,7 +16,7 @@ class KepalaDesa
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->level_id <= 3) {
+        if(auth()->user()->level_id <= 2) {
             return $next($request);
         }
         return redirect('/');
