@@ -107,8 +107,18 @@
           <img src="{{asset('template')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>{{ Auth::user()->name }}</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            <p>{{ Auth::user()->name }}</p>
+            <a href="#"><i class="fa fa-circle text-success"></i>
+            @if(auth()->user()->level_id == 1)
+                Super Admin
+            @elseif(auth()->user()->level_id == 2)
+                Admin
+            @elseif(auth()->user()->level_id == 3)
+                Kepala Desa
+            @elseif(auth()->user()->level_id == 4)
+                Kurir
+            @endif
+            </a>
         </div>
       </div>
       <!-- search form -->

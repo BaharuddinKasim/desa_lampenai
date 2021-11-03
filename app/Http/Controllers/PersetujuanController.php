@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DisposisiController extends Controller
+class PersetujuanController extends Controller
 {
     public function __construct() {
         $this->middleware('auth');
     }
     
     public function index() {
-        return view('v_disposisi');
+        return view('v_persetujuan');
     }
 }
