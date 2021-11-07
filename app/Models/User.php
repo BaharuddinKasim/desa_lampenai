@@ -48,4 +48,5 @@ class User extends Authenticatable
     {
         return $this->hasOne(RefLevel::class, 'id', 'level_id');
     }
+
 }

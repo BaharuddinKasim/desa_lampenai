@@ -19,6 +19,10 @@
             </li>
         @endif
 
+        @if(auth()->user()->level_id == 3 or auth()->user()->level_id == 4 or auth()->user()->level_id == 2 or auth()->user()->level_id == 1)
+            <li class="{{ request()->is('antar') ? 'active' : '' }}"><a href="/antar"><i class="fa fa-send"></i> <span>Pengantaran Surat</span></a></li>
+        @endif
+
         @if(auth()->user()->level_id == 4 or auth()->user()->level_id == 3 or auth()->user()->level_id == 2)
             <li class="{{ request()->is('setuju') ? 'active' : '' }}"><a href="/setuju"><i class="fa fa-hourglass-start"></i> <span>Persetujuan</span></a></li>
 
@@ -34,10 +38,6 @@
                     <li class="{{ request()->is('skeluar') ? 'active' : '' }}"><a href="/skeluar"><i class="fa fa-sign-out"></i> Surat Keluar</a></li>
                 </ul>
             </li>
-        @endif
-
-        @if(auth()->user()->level_id == 3 or auth()->user()->level_id == 4 or auth()->user()->level_id == 2 or auth()->user()->level_id == 1)
-            <li class="{{ request()->is('antar') ? 'active' : '' }}"><a href="/antar"><i class="fa fa-send"></i> <span>Pengantaran Surat</span></a></li>
         @endif
 
         @if(auth()->user()->level_id == 3)

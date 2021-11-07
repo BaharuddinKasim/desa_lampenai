@@ -2,8 +2,10 @@
 @section('title', 'Arsip Surat Masuk')
 
 @section('content')
-    <a href="/smasuk/add" class="btn btn-sm btn-primary">Tambah Data</a><br>
-    <br>
+    @if(auth()->user()->level_id == 3 or auth()->user()->level_id == 4)
+        <a href="/smasuk/add" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah Data</a><br>
+        <br>
+    @endif
     @if(session('pesan'))
         <div class="alert alert-success alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -38,7 +40,7 @@
                     <td>{{ $data->perihal }}</td>
                     <td>{{ $data->kode_surat }}</td>
                     <td>{{ $data->file_surat }}</td>
-                    @if(auth()->user()->level_id == 3)
+                    @if(auth()->user()->level_id == 3 or auth()->user()->level_id == 4)
                         <td>
                             <a href="/smasuk/detail/{{ $data->id_suratmasuk }}" class="btn btn-sm btn-success">Detail</a>
                             <a href="/smasuk/edit/{{ $data->id_suratmasuk }}" class="btn btn-sm btn-warning">Edit</a>
@@ -46,7 +48,7 @@
                                 Delete
                             </button>
                         </td>
-                    @elseif(auth()->user()->level_id == 4 or auth()->user()->level_id == 2)
+                    @elseif(auth()->user()->level_id == 2)
                         <td>
                             <a href="/smasuk/detail/{{ $data->id_suratmasuk }}" class="btn btn-sm btn-success">Detail</a>
                         </td>

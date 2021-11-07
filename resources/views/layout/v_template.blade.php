@@ -154,7 +154,7 @@
   <!-- /.content-wrapper -->
 
   <footer class="main-footer">
-    <strong>Copyright &copy; 2021 <span style="color:#548be3;">Desa Lampenai</span>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2021 <span style="color:#3C8DBC;">Desa Lampenai</span>.</strong> All rights reserved.
   </footer>
 
 

@@ -31,7 +31,11 @@
 <body class="hold-transition login-page">
   <div class="login-box">
     <div class="login-logo">
-      <a href="../../index2.html">Login User</a>
+        <img src="{{asset('gambar')}}/logo-lutim.png" width="60px" title="logo-lutim">
+        <img src="{{asset('gambar')}}/lutim-inspiring.png" width="70px" title="lutim-inspiring">
+    </div>
+    <div class="login-logo">
+      <p><strong>Login User</strong></p>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
@@ -40,7 +44,7 @@
       <form method="POST" action="{{ route('login') }}">
         @csrf
         <div class="form-group has-feedback">
-          <input type="email" name="email" class="form-control" placeholder="Email">
+          <input type="email" name="email" class="form-control" placeholder="Email" autofocus>
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           @error('email')
           <span class="invalid-feedback" role="alert">
