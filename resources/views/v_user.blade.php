@@ -2,7 +2,7 @@
 @section('title', 'User')
 
 @section('content')
-    <a href="/user/add" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah Data</a><br>
+    <a href="/user/add" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah User</a><br>
     
     <table class="table table-bordered">
         <thead>
